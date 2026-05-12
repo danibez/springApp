@@ -1,0 +1,14 @@
+{
+  "id": "teste_mp34rljmb0wwjj2hp",
+  "name": "teste",
+  "requests": [],
+  "config": {
+    "iterations": 1,
+    "delayBetweenRequests": 0,
+    "stopOnError": false,
+    "readFromSharedSession": false,
+    "writeToSharedSession": false
+  },
+  "createdAt": 1778620573138,
+  "updatedAt": 1778620573138
+}
