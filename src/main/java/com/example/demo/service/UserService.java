@@ -23,7 +23,9 @@ public class UserService {
         for (UserModel user : userList) {
             response.add(new UserResponseDTO(user.getId(),
                                             user.getUsername(),
-                                            user.getAge()));
+                                            user.getAge(),
+                                            user.getProfile(),
+                                            user.getPosts()));
         }
         return response;
     }
@@ -39,7 +41,9 @@ public class UserService {
 
         UserResponseDTO response = new UserResponseDTO( userSaved.getId(),
                                                         userSaved.getUsername(),
-                                                        userSaved.getAge());
+                                                        userSaved.getAge(),
+                                                        userSaved.getProfile(), 
+                                                        userSaved.getPosts());
         
         return response;
     }
