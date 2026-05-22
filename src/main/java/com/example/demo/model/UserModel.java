@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import java.util.List;
+import java.util.Set;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
@@ -9,6 +10,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
@@ -38,4 +41,12 @@ public class UserModel {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     @JsonManagedReference // evita loop infinito ao serializar
     private List<PostModel> posts;
+
+    @ManyToMany
+    @JoinTable(
+        name = "user_skill",
+        joinColumns = @JoinColumn(name = "user_id"),
+        inverseJoinColumns = @JoinColumn(name = "skill_id")
+    )
+    private Set<SkillModel> skills;
 }
